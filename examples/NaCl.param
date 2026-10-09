@@ -1,0 +1,5 @@
+task            : singlepoint
+xc_functional   : PBE
+cut_off_energy  : 500 eV
+spin_polarised  : false
+elec_energy_tol : 1e-8 eV

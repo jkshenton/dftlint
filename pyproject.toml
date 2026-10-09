@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dftlint"
+version = "0.1.0"
+description = "Standalone, rule-based linter for DFT input files (CASTEP first)"
+readme = "README.md"
+license = "BSD-3-Clause"
+license-files = ["LICENSE"]
+authors = [{name = "Kane Shenton"}]
+requires-python = ">=3.11"
+dependencies = ["pyyaml>=6"]
+
+[project.optional-dependencies]
+crosscheck = ["castep-outputs>=0.3"]
+dev = ["pytest>=8"]
+
+[project.scripts]
+dftlint = "dftlint.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"dftlint.castep" = ["schema/*.yaml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

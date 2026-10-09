@@ -1,0 +1,10 @@
+task             : geometryoptimisation
+xc_functional    : PBE
+cutoff_energy    : 120 eV
+basis_precision  : fine
+spin_polarised   : maybe
+geom_method      : lbfgs
+md_ensemble      : nvt
+smearing_width   : 0.1 eV
+fix_occupancy    : true
+elec_energy_tol  : -1e-5 eV
